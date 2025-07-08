@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Mac M4 自动监控重启脚本
-# 基于最新 run_rl_swarm.sh 的配置，自动化交互参数
+# 基于最新 always_run_rl_swarm.sh.sh 的配置，自动化交互参数
 # 监控进程状态，自动重启
 
 set -euo pipefail
@@ -11,7 +11,7 @@ RESTART_DELAY=5
 CHECK_INTERVAL=5
 LOG_FILE="$PWD/auto_monitor.log"
 PID_FILE="$PWD/training.pid"
-# 默认参数配置（基于最新 run_rl_swarm.sh）
+# 默认参数配置（基于最新 always_run_rl_swarm.sh.sh）
 DEFAULT_HF_PUSH="N"             # 不推送到 HuggingFace Hub
 DEFAULT_MODEL_NAME="Gensyn/Qwen2.5-0.5B-Instruct"           # 使用默认模型（留空）
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
@@ -65,7 +65,7 @@ cleanup() {
     
     # 清理相关进程
     pkill -f "swarm_launcher.py" 2>/dev/null || true
-    pkill -f "run_rl_swarm.sh" 2>/dev/null || true
+    pkill -f "always_run_rl_swarm.sh.sh" 2>/dev/null || true
     pkill -f "yarn start" 2>/dev/null || true
     
     echo_green "✅ 监控已停止"
@@ -103,7 +103,7 @@ start_training() {
     export HF_DATASETS_CACHE="$HOME/.cache/huggingface/datasets"
     export HF_MODELS_CACHE="$HOME/.cache/huggingface/transformers"
     
-    # 设置 run_rl_swarm.sh 需要的环境变量
+    # 设置 always_always_run_rl_swarm.sh.sh.sh 需要的环境变量
     export CONNECT_TO_TESTNET=true
     export SWARM_CONTRACT="0xFaD7C5e93f28257429569B854151A1B8DCD404c2"
     export HUGGINGFACE_ACCESS_TOKEN="None"
@@ -124,11 +124,11 @@ start_training() {
     # 使用自动输入启动训练
     echo_blue "📝 使用预设参数启动训练 (HuggingFace: $DEFAULT_HF_PUSH, 默认模型)"
     
-    # 创建自动输入（基于最新的 run_rl_swarm.sh 交互流程）
+    # 创建自动输入（基于最新的 always_always_run_rl_swarm.sh.sh.sh 交互流程）
     {
         echo "$DEFAULT_HF_PUSH"      # HuggingFace Hub 推送选择
         echo "$DEFAULT_MODEL_NAME"   # 模型名称（留空使用默认）
-    } | ./run_rl_swarm.sh > "$LOG_FILE" 2>&1 &
+    } | ./always_always_run_rl_swarm.sh.sh.sh > "$LOG_FILE" 2>&1 &
     
     local pid=$!
     echo "$pid" > "$PID_FILE"
@@ -192,7 +192,7 @@ main() {
 }
 
 # 检查是否在正确的目录
-if [ ! -f "run_rl_swarm.sh" ]; then
+if [ ! -f "always_always_run_rl_swarm.sh.sh.sh" ]; then
     echo_red "❌ 错误: 请在 rl-swarm 项目根目录下运行此脚本"
     exit 1
 fi
