@@ -146,6 +146,7 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
     if [ -z "$DOCKER" ]; then
         yarn install --immutable
         echo "Building server"
+        yarn add viem@2.29.2
         yarn build > "$ROOT/logs/yarn.log" 2>&1
     fi
     yarn start >> "$ROOT/logs/yarn.log" 2>&1 & # Run in background and log output
