@@ -9,15 +9,13 @@
 
 Please login to create an Ethereum Server Wallet
 Node.js is already installed: v22.17.0
-Started server process: 1779441
-[32m>> Successfully opened http://localhost:3000 in your default browser.[0m
+Started server process: 2384869
 [32m>> Waiting for modal userData.json to be created...[0m
 Found userData.json. Proceeding...
 Your ORG_ID is set to: cc147dbd-f287-49d6-a94a-24dc182b8199
 Waiting for API key to become activated...
 API key is activated! Proceeding...
 [32m>> Getting requirements...[0m
-正在现有的浏览器会话中打开。
 Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (25.1.1)
 Requirement already satisfied: gensyn-genrl==0.1.4 in ./.venv/lib/python3.12/site-packages (0.1.4)
 Requirement already satisfied: torch in ./.venv/lib/python3.12/site-packages (from gensyn-genrl==0.1.4) (2.7.1)
@@ -261,87 +259,17 @@ Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.12/site-pa
 [32m[0m[32m[0m[32m>> Using model: Gensyn/Qwen2.5-0.5B-Instruct[0m
 [32m>> Good luck in the swarm![0m
 [34m>> And remember to star the repo on GitHub! --> https://github.com/gensyn-ai/rl-swarm[0m
-[2025-07-09 10:02:45,645][datasets][INFO] - PyTorch version 2.7.1 available.
+[2025-07-09 21:27:16,601][datasets][INFO] - PyTorch version 2.7.1 available.
 Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
 wandb: Tracking run with wandb version 0.21.0
 wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-[2025-07-09 10:02:50,652][genrl.logging_utils.global_defs][INFO] - Reasoning Gym Data Manager initialized with config: rgym_exp/src/datasets.yaml
-[2025-07-09 10:02:50,652][genrl.logging_utils.global_defs][INFO] - Loaded composite dataset with 1000 samples
-[2025-07-09 10:02:50,652][genrl.logging_utils.global_defs][INFO] - Train samples: 2, Eval samples: 0
-[2025-07-09 10:02:50,652][genrl.logging_utils.global_defs][INFO] - Dataset weights: arc_1d: 1, basic_arithmetic: 1, base_conversion: 1, bf: 1, binary_matrix: 1, calendar_arithmetic: 1, decimal_arithmetic: 1, fraction_simplification: 1, propositional_logic: 1
-Jul 09 10:02:50.990 [INFO] Checking that identity from `/home/r/桌面/rl-swarm/swarm.pem` is not used by other peers
-Error executing job with overrides: []
-Traceback (most recent call last):
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
-    return _target_(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/genrl/communication/hivemind/hivemind_backend.py", line 84, in __init__
-    self.dht = DHT(
-               ^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 87, in __init__
-    self.run_in_background(await_ready=await_ready)
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 148, in run_in_background
-    self.wait_until_ready(timeout)
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 151, in wait_until_ready
-    self._ready.result(timeout=timeout)
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/utils/mpfuture.py", line 254, in result
-    return super().result(timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
-    return self.__get_result()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
-    raise self._exception
-hivemind.p2p.p2p_daemon_bindings.utils.P2PDaemonError: Daemon failed to start: {"level":"info","ts":"2025-07-09T10:04:00.435+0800","logger":"basichost","caller":"basic/natmgr.go:112","msg":"DiscoverNAT error:no NAT found"}
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/r/桌面/rl-swarm/rgym_exp/runner/swarm_launcher.py", line 29, in <module>
-    main()
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
-    _run_hydra(
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
-    _run_app(
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
-    run_and_report(
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
-    raise ex
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
-    return func()
-           ^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
-    lambda: hydra.run(
-            ^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 132, in run
-    _ = ret.return_value
-        ^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/core/utils.py", line 260, in return_value
-    raise self._return_value
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
-    ret.return_value = task_function(task_cfg)
-                       ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/rgym_exp/runner/swarm_launcher.py", line 22, in main
-    game_manager = instantiate(cfg.game_manager)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
-    return instantiate_node(
-           ^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
-    value = instantiate_node(
-            ^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
-    return _call_target(_target_, partial, args, kwargs, full_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
-    raise InstantiationException(msg) from e
-hydra.errors.InstantiationException: Error in call to target 'genrl.communication.hivemind.hivemind_backend.HivemindBackend':
-P2PDaemonError('Daemon failed to start: {"level":"info","ts":"2025-07-09T10:04:00.435+0800","logger":"basichost","caller":"basic/natmgr.go:112","msg":"DiscoverNAT error:no NAT found"}')
-full_key: game_manager.communication
-[32m>> Shutting down trainer...[0m
-./always_run_rl_swarm.sh: 第 77 行： kill: (-1779433) - 没有那个进程
-[1;34mwandb[0m: 
-[1;34mwandb[0m: You can sync this run to the cloud by running:
-[1;34mwandb[0m: [1mwandb sync ./logs/wandb/offline-run-20250709_100250-vny1mow4[0m
+[2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Reasoning Gym Data Manager initialized with config: rgym_exp/src/datasets.yaml
+[2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Loaded composite dataset with 1000 samples
+[2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Train samples: 2, Eval samples: 0
+[2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Dataset weights: arc_1d: 1, basic_arithmetic: 1, base_conversion: 1, bf: 1, binary_matrix: 1, calendar_arithmetic: 1, decimal_arithmetic: 1, fraction_simplification: 1, propositional_logic: 1
+Jul 09 21:27:22.460 [INFO] Checking that identity from `/home/r/桌面/rl-swarm/swarm.pem` is not used by other peers
+                                                                                                                                                                                                                                                                                                                                                [2025-07-09 21:27:16,580][genrl.logging_utils.global_defs][INFO] - 🐱 Hello 🐈 [melodic pawing hawk] 🦮 [QmPcwX1tM9XQ97cGnGcL18ph6eySfZ4mKGgzJq2h7chh5E]!
+[2025-07-09 21:27:16,580][genrl.logging_utils.global_defs][INFO] - bootnodes: ['/ip4/38.101.215.15/tcp/30011/p2p/QmQ2gEXoPJg6iMBSUFWGzAabS2VhnzuS782Y637hGjfsRJ', '/ip4/38.101.215.15/tcp/30012/p2p/QmWhiaLrx3HRZfgXc2i7KW5nMUNK7P9tRc71yFJdGEZKkC', '/ip4/38.101.215.15/tcp/30013/p2p/QmQa1SCfYTxx7RvU7qJJRo79Zm1RAwPpkeLueDVJuBBmFp']
+[2025-07-09 21:27:16,581][genrl.logging_utils.global_defs][INFO] - Using Model: Gensyn/Qwen2.5-0.5B-Instruct
+[2025-07-09 21:27:16,628][genrl.logging_utils.global_defs][INFO] - Starting round: 8024/1000000.
+Map:   0%|          | 0/2 [00:00<?, ? examples/s]Map: 100%|██████████| 2/2 [00:00<00:00, 368.83 examples/s]

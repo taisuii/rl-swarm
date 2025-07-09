@@ -158,7 +158,7 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
 
     SERVER_PID=$!  # Store the process ID
     echo "Started server process: $SERVER_PID"
-    # sleep 5
+    sleep 5
     # # Try to open the URL in the default browser
     # if [ -z "$DOCKER" ]; then
     #     if open http://localhost:3000 2> /dev/null; then
