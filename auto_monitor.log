@@ -268,8 +268,91 @@ wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or 
 [2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Train samples: 2, Eval samples: 0
 [2025-07-09 21:27:22,131][genrl.logging_utils.global_defs][INFO] - Dataset weights: arc_1d: 1, basic_arithmetic: 1, base_conversion: 1, bf: 1, binary_matrix: 1, calendar_arithmetic: 1, decimal_arithmetic: 1, fraction_simplification: 1, propositional_logic: 1
 Jul 09 21:27:22.460 [INFO] Checking that identity from `/home/r/桌面/rl-swarm/swarm.pem` is not used by other peers
-                                                                                                                                                                                                                                                                                                                                                [2025-07-09 21:27:16,580][genrl.logging_utils.global_defs][INFO] - 🐱 Hello 🐈 [melodic pawing hawk] 🦮 [QmPcwX1tM9XQ97cGnGcL18ph6eySfZ4mKGgzJq2h7chh5E]!
-[2025-07-09 21:27:16,580][genrl.logging_utils.global_defs][INFO] - bootnodes: ['/ip4/38.101.215.15/tcp/30011/p2p/QmQ2gEXoPJg6iMBSUFWGzAabS2VhnzuS782Y637hGjfsRJ', '/ip4/38.101.215.15/tcp/30012/p2p/QmWhiaLrx3HRZfgXc2i7KW5nMUNK7P9tRc71yFJdGEZKkC', '/ip4/38.101.215.15/tcp/30013/p2p/QmQa1SCfYTxx7RvU7qJJRo79Zm1RAwPpkeLueDVJuBBmFp']
-[2025-07-09 21:27:16,581][genrl.logging_utils.global_defs][INFO] - Using Model: Gensyn/Qwen2.5-0.5B-Instruct
-[2025-07-09 21:27:16,628][genrl.logging_utils.global_defs][INFO] - Starting round: 8024/1000000.
-Map:   0%|          | 0/2 [00:00<?, ? examples/s]Map: 100%|██████████| 2/2 [00:00<00:00, 368.83 examples/s]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/genrl/communication/hivemind/hivemind_backend.py", line 84, in __init__
+    self.dht = DHT(
+               ^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 87, in __init__
+    self.run_in_background(await_ready=await_ready)
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 148, in run_in_background
+    self.wait_until_ready(timeout)
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/dht/dht.py", line 151, in wait_until_ready
+    self._ready.result(timeout=timeout)
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/utils/mpfuture.py", line 254, in result
+    return super().result(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+hivemind.p2p.p2p_daemon_bindings.utils.P2PDaemonError: Daemon failed to start: {"level":"warn","ts":"2025-07-09T21:28:16.138+0800","logger":"net/identify","caller":"identify/id.go:399","msg":"failed to identify 12D3KooWSyuVsDL7SCn7bySpkQftgXuv8PuJY3mAMQQZ1npaVSgc: Application error 0x0 (local)"}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/r/桌面/rl-swarm/rgym_exp/runner/swarm_launcher.py", line 29, in <module>
+    main()
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+        ^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/rgym_exp/runner/swarm_launcher.py", line 22, in main
+    game_manager = instantiate(cfg.game_manager)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'genrl.communication.hivemind.hivemind_backend.HivemindBackend':
+P2PDaemonError('Daemon failed to start: {"level":"warn","ts":"2025-07-09T21:28:16.138+0800","logger":"net/identify","caller":"identify/id.go:399","msg":"failed to identify 12D3KooWSyuVsDL7SCn7bySpkQftgXuv8PuJY3mAMQQZ1npaVSgc: Application error 0x0 (local)"}')
+full_key: game_manager.communication
+[32m>> Shutting down trainer...[0m
+./always_run_rl_swarm.sh: 第 77 行： kill: (-2384861) - 没有那个进程
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync ./logs/wandb/offline-run-20250709_212721-7uo1bex9[0m
+_job
+    ret.return_value = task_function(task_cfg)
+  File "/home/r/桌面/rl-swarm/rgym_exp/runner/swarm_launcher.py", line 23, in main
+    game_manager.run_game()
+  File "/home/r/桌面/rl-swarm/.venv/lib/python3.12/site-packages/genrl/game/game_manager.py", line 171, in run_game
+    get_logger().exception(
+wandb:                                                                                
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync ./logs/wandb/offline-run-20250709_212604-z9d5djhz
+wandb: Find logs at: ./logs/wandb/offline-run-20250709_212604-z9d5djhz/logs
+[2025-07-09 21:28:16] 🛑 正在停止监控...
+[2025-07-09 21:28:16] 终止训练进程 PID: 2384861
+[2025-07-09 21:28:17] 🛑 正在停止监控...
